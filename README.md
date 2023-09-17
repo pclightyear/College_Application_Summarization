@@ -1,4 +1,4 @@
-# College_Application_Summarization
+# Provide Multi-Perspective Summarization for College Applications
 
 Document summarization has raised attention due to the growing demand for condensing huge amounts of text data in different domains. General summarization systems aim at generating summaries for general readers with high coverage, readability, and factuality. However, these systems might fall short to summarize domain-specific documents because the target readers and the focused criteria are different. 
 
@@ -14,9 +14,16 @@ Our system demonstrates a 10\% performance boost compared to ChatGPT in quantita
 
 ![Framework](./img/framework.png)
 
-- Summary with multi-perspective
-- Summary with uniqueness
-- Summary post-process
+We focus on the following three criteria to generate the summary that can assist the review process of the committee.
+
+### Coverage
+Coverage means that the summary should cover the most important information of the application that is relevant to the committee. To ensure high coverage, we align the semantic meaning of the summary with comments written by the commitee via perspective-based hierarchical attetion network.
+
+### Diversity
+Diversity means that the summary should include multi-perspective information of the application. Multi-perspectives can be interpreted as the different review standards of the committee. We leverage the comment dataset to extract multi-perspectives via hierarchial clustering.
+
+### Uniqueness
+Uniqueness means that the summary should contain unique information about the application that is also important to the committee. We incorporate unique information into the summary by calculating inverse application frequency and committee consensus.
 
 ## Experimental Resutls
 
@@ -36,10 +43,8 @@ Compare summary with comments.
 | **Ours**    | **3.74**  | **3.60**  | **3.60**  | **3.63**  | **9**   |
 | Difference  | 0.20  | **0.38**  | **0.33**  | 0.22  | 13  |
 
-- **Coverage**: important information of the application
-- **Diversity**: include multi-perspective information of the application
-- **Uniqueness**: contain unique information about the application
-- **Convenience**: usefulness to assist the review process
+
+- Convenience: usefulness to assist the review process
 - Overall Preference: system preference between ChatGPT and our system
 
 ## Tools
